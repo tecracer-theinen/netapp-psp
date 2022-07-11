@@ -71,7 +71,7 @@ rest_property_map({
                 name_servers: 'name_servers',
                 timezone:     'timezone.name'
               })
-              
+
 def define_resource_requirements
   conditionally_require_on_setting :name_servers, %i[dns_domains]
 end
