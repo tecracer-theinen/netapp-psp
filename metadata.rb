@@ -1,4 +1,4 @@
-name 'netapp-psp-chef18'
+name 'netapp-psp'
 maintainer 'Thomas Heinen'
 maintainer_email 'theinen@tecracer.de'
 issues_url 'https://github.com/tecracer-theinen/netapp-psp'

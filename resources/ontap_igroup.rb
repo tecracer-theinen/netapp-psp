@@ -5,7 +5,7 @@ resource_name :ontap_igroup
 provides :ontap_igroup, target_mode: true, platform: 'ontap'
 
 description <<~DOC
-  An initiator group (igroup) is a collection of Fibre Channel (FC) world wide port names (WWPNs), and/or
+    An initiator group (igroup) is a collection of Fibre Channel (FC) world wide port names (WWPNs), and/or
     iSCSI Qualified Names (IQNs), and/or iSCSI EUIs (Extended Unique Identifiers) that identify host
     initiators.
 
