@@ -1,0 +1,4 @@
+awscli
+awsume
+ansi2html
+git-remote-codecommit
