@@ -10,6 +10,7 @@
 	"mounts": [
     "source=${localEnv:HOME}/.aws,target=/home/vscode/.aws,readonly,type=bind",
     "source=${localEnv:HOME}/.chef,target=/home/vscode/.chef,readonly,type=bind",
+    "source=${localEnv:HOME}/.ssh,target=/home/vscode/.ssh,readonly,type=bind",
     "target=/home/reviewer/.aws/cli/cache,type=tmpfs,tmpfs-mode=1777"
   ],
 	"extensions": [

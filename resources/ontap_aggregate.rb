@@ -4,8 +4,6 @@ use 'ontap_base'
 resource_name :ontap_aggregate
 provides :ontap_aggregate, target_mode: true, platform: 'ontap'
 
-require_relative '../abstract_resources/ontap_rest_resource'
-
 description 'Create and manage aggregates.'
 
 property :name, String,

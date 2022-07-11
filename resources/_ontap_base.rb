@@ -5,7 +5,7 @@ use 'core::rest_resource'
 action_class do
   # Handle data transformation, paging and asynchronous execution
   def rest_postprocess(response)
-    data = response&.data || {}
+    data = response.data
 
     # Search responses come back as Array
     data = data.key?('records') ? data.fetch('records') : data
@@ -21,12 +21,13 @@ action_class do
       wait_for_job(job_uuid)
     end
 
-    # TODO: Lamont's expecting a whole RestClient Response, not only the contents
     if data.is_a?(Hash) && data.key?('records')
-      data.fetch('records')
+      response.data = data.fetch('records')
     else
-      data
+      response.data = data
     end
+
+    response
   end
 
   # Transform responses into readable error messages
@@ -65,7 +66,7 @@ action_class do
     Timeout.timeout(timeout) do
       loop do
         raw = api_connection.get "/api/cluster/jobs/#{uuid}"
-        status = rest_postprocess(raw)
+        status = rest_postprocess(raw).data
 
         # REST model: https://library.netapp.com/ecmdocs/ECMLP2876964/html/index.html#model-job
         case status['state']
